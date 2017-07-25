@@ -7,7 +7,10 @@
 
 #p "We carry #{item_one[:brand]} #{item_one[:type]} in the #{item_one[:catagory]} section."
 
-class StoreItem
+class StoreItem 
+  attr_reader :catagory, :type, :brand, :price
+  attr_writer :type, :price
+
   def initialize(catagory, type, brand, price)
     @catagory = catagory
     @type = type
@@ -15,29 +18,29 @@ class StoreItem
     @price = price
   end
 
-  def catagory
-    @catagory
-  end
+  #def catagory
+    #@catagory
+  #end
 
-  def type
-    @type
-  end
+  #def type
+    #@type
+  #end
 
-  def type=(type)
-    @type = type
-  end
+  #def type=(type)
+    #@type = type
+  #end
 
-  def brand
-    @brand
-  end
+  #def brand
+    #@brand
+  #end
 
-  def price
-    @price
-  end
+  #def price
+    #@price
+  #end
 
-  def price=(price)
-    @price = price
-  end
+  #def price=(price)
+    #@price = price
+  #end
 
   def show_info
     "We carry #{brand} #{type} in the #{catagory} section. Price: $#{price}"
@@ -49,5 +52,7 @@ item_one = StoreItem.new("beverage", "orange juice", "Tropicana", 2)
 p item_one.show_info
 
 puts item_one.catagory
+puts item_one.type
+item_one.type = "juice"
 puts item_one.type
 puts item_one.brand
