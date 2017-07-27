@@ -1,10 +1,8 @@
-
-class StoreItem 
+class StoreItem
+  include Buyable
   attr_reader :catagory, :type, :brand, :price
   attr_writer :type, :price
 
-  include Countable
-  
   def initialize(item_info )
     @catagory = item_info[:catagory]
     @type = item_info[:type]
@@ -18,3 +16,6 @@ class StoreItem
   end
 
 end
+
+
+
